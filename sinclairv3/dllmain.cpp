@@ -50,7 +50,7 @@ DWORD WINAPI attach(LPVOID params) {
     const std::chrono::high_resolution_clock::time_point end = std::chrono::high_resolution_clock::now();
 
     //  Print calculated output of end - start
-    logger::the<logger::level::log>("%s: it took *about* %lf seconds to initialize\n", __func__, std::chrono::duration_cast<std::chrono::duration<double>>(end - start).count());
+    logger::the<logger::level::log>("%s: it took *about* %lf seconds to initialize\n", __FUNCTION__, std::chrono::duration_cast<std::chrono::duration<double>>(end - start).count());
 
     std::this_thread::sleep_for(std::chrono::milliseconds(400));
 
