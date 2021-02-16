@@ -73,7 +73,7 @@ namespace game {
 				if (change_color)
 					game::memory::interfaces::prototypes::surface->draw_set_color(r, g, b, a);
 
-				game::memory::interfaces::prototypes::surface->draw_line(x0, y0, x1, y1);
+				game::memory::interfaces::prototypes::surface->draw_line(x0, y0, x0 + x1, y0 + y1);
 			}
 		}
 	}
