@@ -4,6 +4,12 @@
 
 #include "enums.h"
 
+typedef uintptr_t CBaseHandle;
+typedef uintptr_t VPanel;
+typedef uintptr_t HCursor;
+typedef uintptr_t HTexture;
+typedef uintptr_t HFont;
+
 class bf_read;
 class bf_write;
 

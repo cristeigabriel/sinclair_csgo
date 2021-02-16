@@ -27,7 +27,6 @@ namespace util {
                     typedef T(__cdecl* fn)(void*, Args...);
                     return (*(fn**)(base_class))[index](base_class, args...);
                 }
-
             }
         }
     }

@@ -125,7 +125,7 @@ struct studiohdr_t {
 };
 
 class CModelInfo {
-public:
+private:
     enum indices {
         GET_MODEL_INDEX = 2,
         GET_MODEL_INDEX_INDEX = 2,
@@ -133,6 +133,7 @@ public:
         GET_MODEL_MATERIALS_INDEX = 18,
         GET_STUDIO_MODEL_INDEX = 31
     };
+
 public:
     __forceinline model_t* get_model(int index) {
         return util::vtable::func::getter::the<model_t*, indices::GET_MODEL_INDEX>(this, index);

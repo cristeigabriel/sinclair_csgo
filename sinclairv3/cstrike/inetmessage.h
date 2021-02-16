@@ -6,7 +6,7 @@
 #include "../math/math.h"
 
 class INetMessage {
-public:
+private:
 	enum indices {
 		GET_TYPE_INDEX = 7,
 		GET_GROUP_INDEX = 8

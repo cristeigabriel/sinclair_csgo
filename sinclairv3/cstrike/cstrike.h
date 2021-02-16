@@ -5,6 +5,7 @@
 #include "../game/memory/memory.h"
 #include "../math/math.h"
 
+#include "vgui/isurface.h"
 #include "cusercmd.h"
 #include "utl_vector.h"
 #include "convar.h"
@@ -17,4 +18,3 @@
 #include "modelinfo.h"
 #include "weapons.h"
 #include "inetmessage.h"
-#include "vgui/surface.h"

@@ -13,7 +13,7 @@
 #define SIGNED_GUID_LEN 32
 
 class IBaseClientDLL {
-public:
+private:
 	enum indices {
 		GET_ALL_CLASSES_INDEX = 8,
 		IN_ACTIVATE_MOUSE_INDEX = 15,
@@ -81,7 +81,7 @@ struct player_info_t {
 };
 
 class IVEngineClient {
-public:
+private:
 	enum indices {
 		CLIENT_CMD_INDEX = 7,
 		GET_PLAYER_INFO_INDEX = 8,

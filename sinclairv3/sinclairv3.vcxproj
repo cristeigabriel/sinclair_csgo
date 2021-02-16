@@ -176,7 +176,7 @@
     <ClInclude Include="cstrike\modelinfo.h" />
     <ClInclude Include="cstrike\sdk_hud_chat.h" />
     <ClInclude Include="cstrike\utl_vector.h" />
-    <ClInclude Include="cstrike\vgui\surface.h" />
+    <ClInclude Include="cstrike\vgui\isurface.h" />
     <ClInclude Include="cstrike\weapons.h" />
     <ClInclude Include="errors\errors.h" />
     <ClInclude Include="extern\custom_winapi\custom_winapi.h" />

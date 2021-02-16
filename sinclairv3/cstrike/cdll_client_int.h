@@ -6,7 +6,7 @@
 #include "../math/math.h"
 
 class IInputSystem {
-public:
+private:
     enum indices {
         ENABLE_INPUT_INDEX = 11,
         IS_BUTTON_DOWN_INDEX = 15,

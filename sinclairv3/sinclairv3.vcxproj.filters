@@ -111,9 +111,6 @@
     <ClInclude Include="cstrike\inetmessage.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="cstrike\vgui\surface.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="extern\custom_winapi\custom_winapi.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -121,6 +118,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="extern\extern.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="cstrike\vgui\isurface.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

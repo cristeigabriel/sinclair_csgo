@@ -12,5 +12,5 @@ void __stdcall game::hooking::functions::prototypes::frame_stage_notify::hooked(
 		break;
 	}
 
-	o_fn(stage);
+	return o_fn(stage);
 }

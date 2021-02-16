@@ -6,6 +6,7 @@
 #include "../math/math.h"
 
 class IClientEntityList {
+private:
 	enum indices {
 		GET_INDEX = 3,
 		GET_FROM_HANDLE_INDEX = 4,

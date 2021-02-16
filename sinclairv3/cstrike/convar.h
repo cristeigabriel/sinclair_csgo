@@ -8,7 +8,7 @@
 #include "utl_vector.h"
 
 class CConVar {
-public:
+private:
     enum indices {
         GET_FLOAT_INDEX = 12,
         GET_INT_INDEX,
@@ -60,7 +60,7 @@ public:
 };
 
 class ICVar {
-public:
+private:
     enum indices {
         REGISTER_CON_COMMAND_INDEX = 10,
         UNREGISTER_CON_COMMAND_INDEX,

@@ -16,5 +16,5 @@ void __fastcall game::hooking::functions::prototypes::draw_crosshair::hooked(REG
 	if (game::entities::prototypes::local->scoped())
 		return;
 
-	o_fn(thisptr, dummy);
+	return o_fn(thisptr, dummy);
 }

@@ -6,7 +6,7 @@
 #include "../math/math.h"
 
 class CHudChat {
-public:
+private:
 	enum indices {
 		CHAT_PRINTF_INDEX = 27
 	};
