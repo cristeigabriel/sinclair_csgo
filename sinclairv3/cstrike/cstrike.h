@@ -18,3 +18,5 @@
 #include "modelinfo.h"
 #include "weapons.h"
 #include "inetmessage.h"
+#include "imaterial.h"
+#include "imaterialvar.h"

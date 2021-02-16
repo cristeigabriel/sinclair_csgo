@@ -42,7 +42,7 @@ namespace game {
 				PROTOTYPE_FUNCTION
 				(
 					get_color_modulation,
-					void(__fastcall)(void*, void*, float*, float*, float*)
+					void(__fastcall)(IMaterial*, void*, float*, float*, float*)
 				);
 
 				PROTOTYPE_FUNCTION

@@ -52,7 +52,7 @@ namespace game {
 			}
 
 			template <bool change_color = true>
-			inline void outline(int x, int y, int w, int h, int r = 255, int g = 255, int b = 255, int a = 255) {
+			inline void rectangle_outline(int x, int y, int w, int h, int r = 255, int g = 255, int b = 255, int a = 255) {
 				if (change_color)
 					game::memory::interfaces::prototypes::surface->draw_set_color(r, g, b, a);
 

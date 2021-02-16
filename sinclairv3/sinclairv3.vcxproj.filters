@@ -126,6 +126,12 @@
     <ClInclude Include="game\renderer\surface\surface.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="cstrike\imaterialvar.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="cstrike\imaterial.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp">

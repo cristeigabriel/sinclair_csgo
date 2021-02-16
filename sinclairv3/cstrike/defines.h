@@ -52,7 +52,8 @@ class CModelInfo;
 class CCSWeaponData;
 class INetMessage;
 class ISurface;
-
+class IMaterial;
+class IMaterialVar;
 
 typedef void(__thiscall* start_drawing_t)(void*);
 typedef void(__thiscall* finish_drawing_t)(void*);
@@ -88,3 +89,38 @@ typedef void(*convar_callback_t)(CConVar* convar, const char* old_svalue, float 
 
 #define FCVAR_UNLOGGED			(1<<11)  //  If this is a FCVAR_SERVER, don't log changes to the log file / console if we are creating a log
 #define FCVAR_NEVER_AS_STRING	(1<<12)  //  never try to print that cvar
+
+//  texture group names
+// These are given to FindMaterial to reference the texture groups that show up on the 
+#define TEXTURE_GROUP_LIGHTMAP						"Lightmaps"
+#define TEXTURE_GROUP_WORLD							"World textures"
+#define TEXTURE_GROUP_MODEL							"Model textures"
+#define TEXTURE_GROUP_STATIC_PROP					"StaticProp textures"
+#define TEXTURE_GROUP_COMBINED						"Combined Textures"
+#define TEXTURE_GROUP_COMPOSITE						"Composited Textures"
+#define TEXTURE_GROUP_VGUI							"VGUI textures"
+#define TEXTURE_GROUP_PARTICLE						"Particle textures"
+#define TEXTURE_GROUP_DECAL							"Decal textures"
+#define TEXTURE_GROUP_SKYBOX						"SkyBox textures"
+#define TEXTURE_GROUP_CLIENT_EFFECTS				"ClientEffect textures"
+#define TEXTURE_GROUP_OTHER							"Other textures"
+#define TEXTURE_GROUP_PRECACHED						"Precached"				// TODO: assign texture groups to the precached materials
+#define TEXTURE_GROUP_CUBE_MAP						"CubeMap textures"
+#define TEXTURE_GROUP_RENDER_TARGET					"RenderTargets"
+#define TEXTURE_GROUP_UNACCOUNTED					"Unaccounted textures"	// Textures that weren't assigned a texture group.
+//#define TEXTURE_GROUP_STATIC_VERTEX_BUFFER		"Static Vertex"
+#define TEXTURE_GROUP_STATIC_INDEX_BUFFER			"Static Indices"
+#define TEXTURE_GROUP_STATIC_VERTEX_BUFFER_DISP		"Displacement Verts"
+#define TEXTURE_GROUP_STATIC_VERTEX_BUFFER_COLOR	"Lighting Verts"
+#define TEXTURE_GROUP_STATIC_VERTEX_BUFFER_WORLD	"World Verts"
+#define TEXTURE_GROUP_STATIC_VERTEX_BUFFER_MODELS	"Model Verts"
+#define TEXTURE_GROUP_STATIC_VERTEX_BUFFER_OTHER	"Other Verts"
+#define TEXTURE_GROUP_DYNAMIC_INDEX_BUFFER			"Dynamic Indices"
+#define TEXTURE_GROUP_DYNAMIC_VERTEX_BUFFER			"Dynamic Verts"
+#define TEXTURE_GROUP_DEPTH_BUFFER					"DepthBuffer"
+#define TEXTURE_GROUP_VIEW_MODEL					"ViewModel"
+#define TEXTURE_GROUP_PIXEL_SHADERS					"Pixel Shaders"
+#define TEXTURE_GROUP_VERTEX_SHADERS				"Vertex Shaders"
+#define TEXTURE_GROUP_RENDER_TARGET_SURFACE			"RenderTarget Surfaces"
+#define TEXTURE_GROUP_MORPH_TARGETS					"Morph Targets"
+#define TEXTURE_GROUP_SCALEFORM						"Scaleform textures"
