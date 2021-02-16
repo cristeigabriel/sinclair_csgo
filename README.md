@@ -1,5 +1,6 @@
 # sinclair_csgo
-My CS:GO cheat, written with performance in mind. 
+- My CS:GO cheat, written with performance in mind. 
+- Currently **in development**, and I plan to keep this as such!
 
 # Credits
 - @swoopae for his hasher.
