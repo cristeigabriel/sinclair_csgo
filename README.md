@@ -55,4 +55,10 @@
 - In this current stage, it is very likely for inconsistencies in code to be noticeable, if you notice any of those, please proceed with reporting them or even making a pull request solving them. Sometimes, inconsistencies might be there for actual practical matters, the consistency being though opposed by my coding style. These inconsistencies though should not be often apparent.
 
 # Features
-WIP
+- Outside of aforementioned capabilities, actual features are:
+  - No Duck Delay
+  - Force Crosshair
+  - Dangerzone Compass
+  - Nightmode (with static prop/skybox modulation)
+  - net_graph watermark
+  - FileCRCCheck netmessage protobuf bypass
