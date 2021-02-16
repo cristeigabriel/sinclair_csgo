@@ -9,6 +9,11 @@ namespace game {
 				return false;
 			}
 
+			if (!game::renderer::surface::init::the()) {
+				logger::the<logger::level::log>("%s: Failed at surface renderer initializer\n", __FUNCTION__);
+				return false;
+			}
+
 			game::props::init::the();
 
 			if (!game::hooking::init::the()) {

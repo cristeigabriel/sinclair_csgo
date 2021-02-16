@@ -11,12 +11,9 @@ void __fastcall game::hooking::functions::prototypes::paint::hooked(REGISTERS, P
 
 	if (*(DWORD*)(v3 + 72) /* staticTransitionPanel */ && (mode & PaintMode::PAINT_UI_PANELS) != 0) {
 		o_start_drawing(game::memory::interfaces::prototypes::surface);
-
-		//game::memory::interfaces::prototypes::surface->draw_set_color(255, 255, 255, 255);
-		//game::memory::interfaces::prototypes::surface->draw_outlined_rectangle(15, 15, 200, 200);
-		//game::memory::interfaces::prototypes::surface->draw_line(15, 900, 45, 905);
-		//game::memory::interfaces::prototypes::surface->draw_set_color(255, 255, 255, 255);
-		//game::memory::interfaces::prototypes::surface->draw_outlined_rectangle(555, 15, 200, 200);
+		
+		game::renderer::surface::text<game::renderer::surface::Fonts::FONT_VERDANA_BOLD>
+			("helo", 10, 10, 10, 255, 255, 255);
 
 		o_finish_drawing(game::memory::interfaces::prototypes::surface);
 	}

@@ -190,6 +190,7 @@
     <ClInclude Include="game\memory\memory.h" />
     <ClInclude Include="game\props\props.h" />
     <ClInclude Include="extern\hasher\hasher.h" />
+    <ClInclude Include="game\renderer\surface\surface.h" />
     <ClInclude Include="math\math.h" />
     <ClInclude Include="math\matrix\matrix.h" />
     <ClInclude Include="math\position\position.h" />
@@ -218,6 +219,7 @@
     <ClCompile Include="game\hooking\hooking.cpp" />
     <ClCompile Include="game\memory\memory.cpp" />
     <ClCompile Include="game\props\props.cpp" />
+    <ClCompile Include="game\renderer\surface\surface.cpp" />
     <ClCompile Include="logger\logger.cpp" />
     <ClCompile Include="math\math.cpp" />
     <ClCompile Include="pe\pe.cpp" />

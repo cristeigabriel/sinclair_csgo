@@ -123,6 +123,9 @@
     <ClInclude Include="cstrike\vgui\isurface.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="game\renderer\surface\surface.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp">
@@ -192,6 +195,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="extern\custom_winapi\custom_winapi.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="game\renderer\surface\surface.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

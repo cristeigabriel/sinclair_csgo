@@ -15,6 +15,7 @@ namespace errors {
 		GAME_MEMORY_BYTE_FAILED_RESTORING_WRITE_PROTECTION,
 		GAME_MEMORY_BYTE_PATCH_FAILED,
 		GAME_ENTITIES_LOCAL_WAS_NULL,
+		GAME_RENDERER_FONT_WAS_NULL,
 		INITIALIZER_FAILED,
 
 		ERRORS_LIST_SIZE
@@ -32,6 +33,7 @@ namespace errors {
 			"While bytepatching, upon trying to restore write protection, the operation has failed", //	GAME_MEMORY_BYTE_FAILED_RESTORING_WRITE_PROTECTION
 			"While bytepatching, the returned result was false", //	GAME_MEMORY_BYTE_PATCH_FAILED
 			"While trying to assign local player by an assessed address, the returned result was NULL", //	GAME_ENTITIES_LOCAL_WAS_NULL
+			"While trying to create a font, the returned result was NULL", //	GAME_RENDERER_FONT_WAS_NULL
 			"Upon initialization, something has thrown" //	INITIALIZER_FAILED
 		};
 	}
