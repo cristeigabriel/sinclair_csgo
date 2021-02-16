@@ -15,6 +15,13 @@ void __fastcall game::hooking::functions::prototypes::paint::hooked(REGISTERS, P
 		game::renderer::surface::text<game::renderer::surface::Fonts::FONT_VERDANA_BOLD>
 			("helo", 10, 10, 10, 255, 255, 255);
 
+		game::renderer::surface::set_color(255, 255, 255, 255);
+		game::renderer::surface::rectangle<false>(50, 50, 20, 20);
+
+		//	According to the renderer design, this is obviously going to globally change color
+		//	Though, I'll consider implementing a preservation feature
+		game::renderer::surface::rectangle(50, 100, 20, 20, 255, 0, 255);
+
 		o_finish_drawing(game::memory::interfaces::prototypes::surface);
 	}
 
