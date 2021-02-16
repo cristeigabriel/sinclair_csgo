@@ -45,6 +45,7 @@
 # Design
 - Sinclair is designed with what'd perform the best in mind, explaining the templates 'abuse'. 
 - This could be a trade off, due to possibly extended compilation times, but this should not be noticeable when compiling on computers that benefit from the multi-processor option.
+- In this current stage, it is very likely for inconsistencies in code to be noticeable, if you notice any of those, please proceed with reporting them or even making a pull request solving them. Sometimes, inconsistencies might be there for actual practical matters, the consistency being though opposed by my coding style. These inconsistencies though should not be often apparent.
 
 # Features
 WIP
