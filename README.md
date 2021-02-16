@@ -44,7 +44,7 @@
 - Alternatives could've been chose but it'd be likely that they'd be worse.
 
 # Rendering
-- Sinclair comes with an ISurface wrapper that supports both Unicode and Multibyte strings (the unicode implementation being the use of DrawColoredText to avoid overhead), with renderer functions font processing by compile-time due to the fonts being stored in an array, with geometry templatized color-preservation abilities (the latter not being complete), these are the current wrapped geometry shapes:
+- Sinclair comes with an ISurface wrapper that supports both unicode strings by DrawColoredText (granting no conversion overhead, thus not making standard an issue at hand), with renderer functions font processing by compile-time since the fonts being stored in an array, with geometry templatized color-preservation abilities (the latter not being complete), these are the current wrapped geometry shapes:
   - Rectangle
   - (Rectangle) Outline
   - Line
