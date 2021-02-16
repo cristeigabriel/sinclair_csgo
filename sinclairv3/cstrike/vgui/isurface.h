@@ -28,10 +28,6 @@ private:
 		DRAW_OUTLINED_RECTANGLE_INDEX = 18,
 		DRAW_LINE_INDEX = 19,
 		DRAW_POLY_LINE_INDEX = 20,
-		DRAW_SET_TEXT_FONT_INDEX = 23,
-		DRAW_SET_TEXT_COLOR_RGBA_INDEX = 24,
-		DRAW_SET_TEXT_POSITION_INDEX = 26, 
-		DRAW_PRINT_TEXT_INDEX = 28,
 		CREATE_FONT_INDEX = 71,
 		SET_FONT_GLYPH_SET_INDEX = 72,
 		DRAW_TEXTURED_POLY_LINE_INDEX = 104,
@@ -59,22 +55,6 @@ public:
 
 	__forceinline void draw_poly_line(int* x, int* y, int points) {
 		return util::vtable::func::getter::the<void, indices::DRAW_POLY_LINE_INDEX>(this, x, y, points);
-	}
-
-	__forceinline void draw_set_text_font(HFont font) {
-		return util::vtable::func::getter::the<void, indices::DRAW_SET_TEXT_FONT_INDEX>(this, font);
-	}
-
-	__forceinline void draw_set_text_color(int r, int g, int b, int a) {
-		return util::vtable::func::getter::the<void, indices::DRAW_SET_TEXT_COLOR_RGBA_INDEX>(this, r, g, b, a);
-	}
-
-	__forceinline void draw_set_text_position(int x, int y) {
-		return util::vtable::func::getter::the<void, indices::DRAW_SET_TEXT_POSITION_INDEX>(this, x, y);
-	}
-
-	__forceinline void draw_print_text(const wchar_t* text, int len, FontDrawType draw_type = FontDrawType::FONT_DRAW_DEFAULT) {
-		return util::vtable::func::getter::the<void, indices::DRAW_PRINT_TEXT_INDEX>(this, text, len, draw_type);
 	}
 
 	__forceinline HFont create_font() {

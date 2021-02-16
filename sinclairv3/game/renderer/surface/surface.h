@@ -39,15 +39,6 @@ namespace game {
 				game::memory::interfaces::prototypes::surface->draw_colored_text(fonts_list[font], x, y, r, g, b, a, text);
 			}
 
-			template <game::renderer::surface::Fonts font,
-				HFont(&fonts_list)[game::renderer::surface::Fonts::FONT_LIST_SIZE] = game::renderer::surface::prototypes::fonts, size_t N>
-			inline void text(const wchar_t(&text)[N], int x, int y, int r, int g, int b, int a) {
-				game::memory::interfaces::prototypes::surface->draw_set_text_position(x, y);
-				game::memory::interfaces::prototypes::surface->draw_set_text_color(r, g, b, a);
-				game::memory::interfaces::prototypes::surface->draw_set_text_font(fonts_list[font]);
-				game::memory::interfaces::prototypes::surface->draw_print_text(text, N - 1);
-			}
-
 			//	According to godbolt, there'll never be a cmp, this is processed by compile time
 			//	If change color is true, there's a function that sets color normally and does others
 			//	Else, it just does others normally
@@ -59,7 +50,7 @@ namespace game {
 
 				game::memory::interfaces::prototypes::surface->draw_filled_rectangle(x, y, x + w, y + h);
 			}
-		
+
 			template <bool change_color = true>
 			inline void outline(int x, int y, int w, int h, int r = 255, int g = 255, int b = 255, int a = 255) {
 				if (change_color)
