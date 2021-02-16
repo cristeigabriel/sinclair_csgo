@@ -4,6 +4,7 @@
 
 # Credits
 - @swoopae for his hasher.
+- @Speedi13 for his [Custom WINAPI](https://github.com/Speedi13/Custom-GetProcAddress-and-GetModuleHandle-and-more) functions.
 - Other creators from whom I might've taken minimal contributions such as enumerators for various matters or even inspiration.
 
 # Adresses (signatures)

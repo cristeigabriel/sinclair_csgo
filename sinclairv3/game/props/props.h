@@ -4,7 +4,7 @@
 
 #include "../../cstrike/defines.h"
 
-#include "../../hasher/hasher.h"
+#include "../../extern/hasher/hasher.h"
 
 #include <unordered_map>
 

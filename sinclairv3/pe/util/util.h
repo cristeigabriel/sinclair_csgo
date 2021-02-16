@@ -50,7 +50,7 @@ namespace pe {
 					template <typename T, size_t N>
 					inline T the(const pe::types::image_type& image, const char(&name)[N]) {
 						//  Get export
-						const T o_fn = (T)GetProcAddress(image, name);
+						const T o_fn = (T)GetExportAddress(image, name, true);
 						if (o_fn == nullptr) {
 							logger::the<logger::level::error>("%s: \"o_fn\" (%s) was nullptr, returning\n", __FUNCTION__, name);
 							SINCLAIR_THROW(errors::Errors::PE_UTIL_EXPORTS_RESULT_WAS_NULL);

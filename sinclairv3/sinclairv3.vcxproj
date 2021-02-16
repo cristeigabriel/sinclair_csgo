@@ -179,6 +179,8 @@
     <ClInclude Include="cstrike\vgui\surface.h" />
     <ClInclude Include="cstrike\weapons.h" />
     <ClInclude Include="errors\errors.h" />
+    <ClInclude Include="extern\custom_winapi\custom_winapi.h" />
+    <ClInclude Include="extern\extern.h" />
     <ClInclude Include="framework.h" />
     <ClInclude Include="game\entities\entities.h" />
     <ClInclude Include="game\entities\player.h" />
@@ -187,7 +189,7 @@
     <ClInclude Include="game\hooking\prototypes.h" />
     <ClInclude Include="game\memory\memory.h" />
     <ClInclude Include="game\props\props.h" />
-    <ClInclude Include="hasher\hasher.h" />
+    <ClInclude Include="extern\hasher\hasher.h" />
     <ClInclude Include="math\math.h" />
     <ClInclude Include="math\matrix\matrix.h" />
     <ClInclude Include="math\position\position.h" />
@@ -198,6 +200,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp" />
+    <ClCompile Include="extern\custom_winapi\custom_winapi.cpp" />
     <ClCompile Include="game\entities\entities.cpp" />
     <ClCompile Include="game\entities\player.cpp" />
     <ClCompile Include="game\game.cpp" />

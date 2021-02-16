@@ -8,6 +8,8 @@
 
 #include <cstdint>
 
+#include "../extern/custom_winapi/custom_winapi.h"
+
 #include "../logger/logger.h"
 
 #include "../errors/errors.h"
@@ -55,7 +57,7 @@ namespace pe {
 			assert(image_map);
 
 			//  Get result now for valid checks
-			const pe::types::image_type result = GetModuleHandleA(image);
+			const pe::types::image_type result = GetModuleA(image);
 			if (result == NULL) {
 				logger::the<logger::level::error>("%s: \"result\" was NULL, returning, refer to MSDN\n", __FUNCTION__);
 				SINCLAIR_THROW(errors::Errors::PE_GETTER_RESULT_WAS_NULL);
