@@ -33,6 +33,7 @@ private:
 		DRAW_SET_TEXT_POSITION_INDEX = 26, 
 		DRAW_PRINT_TEXT_INDEX = 28,
 		CREATE_FONT_INDEX = 71,
+		SET_FONT_GLYPH_SET_INDEX = 72,
 		DRAW_TEXTURED_POLY_LINE_INDEX = 104,
 		DRAW_TEXTURED_POLYGON_INDEX = 106,
 		DRAW_COLORED_TEXT_INDEX = 163
@@ -47,6 +48,7 @@ public:
 		return util::vtable::func::getter::the<void, indices::DRAW_FILLED_RECTANGLE_INDEX>(this, x, y, w, h);
 	}
 
+	//	This could be remade with vertices but seems to work fine (for now)
 	__forceinline void draw_outlined_rectangle(int x, int y, int w, int h) {
 		return util::vtable::func::getter::the<void, indices::DRAW_OUTLINED_RECTANGLE_INDEX>(this, x, y, w, h);
 	}
@@ -77,6 +79,12 @@ public:
 
 	__forceinline HFont create_font() {
 		return util::vtable::func::getter::the<HFont, indices::CREATE_FONT_INDEX>(this);
+	}
+
+	__forceinline void set_font_glyph_set(HFont font, const char* font_name, int tall, int weight, int blur,
+		int scan_lines, FontFlags flags, int range_min = 0, int range_max = 0) {
+		return util::vtable::func::getter::the<void, indices::SET_FONT_GLYPH_SET_INDEX>(this, font, font_name,
+			tall, weight, blur, scan_lines, flags, range_min, range_max);
 	}
 
 	__forceinline void draw_textured_poly_line(const Vertex_t* points_vertices, int points) {
