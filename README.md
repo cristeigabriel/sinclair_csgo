@@ -33,7 +33,7 @@
   - GetCSWpnData
   - GetCurrentGameType
   - IsUsingStaticPropDebugModes
-  - Engine VGui Paint
+  - Paint (Engine VGui)
   - PushNotice (CCSGOHudChat one)
   - SendNetMsg (CNetChan one)
   - 'vsnprintf' (Game formatting function)
