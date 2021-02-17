@@ -24,6 +24,8 @@
   - ICVar
   - IInputSystem
   - CModelInfo
+  - IVModelRenderer
+  - MaterialSystem
 
 # Hooks
 - Sinclair currently uses the GameOverlayRenderer.dll hooking utilities, and it comes with these specific hooks:
