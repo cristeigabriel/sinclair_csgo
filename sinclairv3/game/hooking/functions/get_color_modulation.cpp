@@ -6,10 +6,21 @@ void __fastcall game::hooking::functions::prototypes::get_color_modulation::hook
 	o_fn(thisptr, dummy, r, g, b);
 
 	const uint32_t group_name = HASH_RT(thisptr->get_texture_group_name());
-	if (group_name != HASH_CT(TEXTURE_GROUP_WORLD) && group_name != HASH_CT(TEXTURE_GROUP_STATIC_PROP) && group_name != HASH_CT(TEXTURE_GROUP_SKYBOX))
-		return;
+	switch (group_name) {
+	case HASH_CT(TEXTURE_GROUP_WORLD):
+	case HASH_CT(TEXTURE_GROUP_SKYBOX):
+		*r *= 0.2f;
+		*g *= 0.2f;
+		*b *= 0.2f;
+		break;
 
-	*r *= 0.2f;
-	*g *= 0.2f;
-	*b *= 0.2f;
+	case HASH_CT(TEXTURE_GROUP_STATIC_PROP):
+		*r *= 0.45f;
+		*g *= 0.45f;
+		*b *= 0.45f;
+		break;
+
+	default:
+		break;
+	}
 }
