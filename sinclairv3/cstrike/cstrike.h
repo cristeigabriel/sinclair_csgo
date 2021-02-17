@@ -21,3 +21,5 @@
 #include "inetmessage.h"
 #include "imaterial.h"
 #include "imaterialvar.h"
+#include "imaterialsystem.h"
+#include "ivmodelrender.h"

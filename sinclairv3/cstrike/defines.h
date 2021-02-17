@@ -4,11 +4,12 @@
 
 #include "enums.h"
 
-typedef uint32_t CBaseHandle;
-typedef uint32_t HCursor;
-typedef uint32_t HTexture;
-typedef uint32_t HFont;
-typedef uint32_t HPanel;
+typedef uintptr_t CBaseHandle;
+typedef uintptr_t HCursor;
+typedef uintptr_t HTexture;
+typedef uintptr_t HFont;
+typedef uintptr_t HPanel;
+typedef uintptr_t MaterialHandle;
 
 class bf_read;
 class bf_write;
@@ -49,11 +50,13 @@ struct mstudiobbox_t;
 struct mstudiohitboxset_t;
 struct studiohdr_t;
 class CModelInfo;
+class IMaterialSystem;
 class CCSWeaponData;
 class INetMessage;
 class ISurface;
 class IMaterial;
 class IMaterialVar;
+class IVModelRender;
 class SurfacePlat;
 class VPanel;
 

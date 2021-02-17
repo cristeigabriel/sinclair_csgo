@@ -138,6 +138,12 @@
     <ClInclude Include="util\color\color.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="cstrike\imaterialsystem.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="cstrike\ivmodelrender.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp">

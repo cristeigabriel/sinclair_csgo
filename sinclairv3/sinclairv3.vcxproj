@@ -173,8 +173,10 @@
     <ClInclude Include="cstrike\globalvars_base.h" />
     <ClInclude Include="cstrike\ienginetrace.h" />
     <ClInclude Include="cstrike\imaterial.h" />
+    <ClInclude Include="cstrike\imaterialsystem.h" />
     <ClInclude Include="cstrike\imaterialvar.h" />
     <ClInclude Include="cstrike\inetmessage.h" />
+    <ClInclude Include="cstrike\ivmodelrender.h" />
     <ClInclude Include="cstrike\modelinfo.h" />
     <ClInclude Include="cstrike\sdk_hud_chat.h" />
     <ClInclude Include="cstrike\utl_vector.h" />

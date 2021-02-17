@@ -47,6 +47,8 @@ namespace game {
 				extern ICVar* cvar_system;
 				extern IInputSystem* input_system;
 				extern CModelInfo* model_info;
+				extern IVModelRender* model_render;
+				extern IMaterialSystem* material_system;
 			}
 		}
 	}

@@ -15,6 +15,8 @@ ISurface* game::memory::interfaces::prototypes::surface;
 ICVar* game::memory::interfaces::prototypes::cvar_system;
 IInputSystem* game::memory::interfaces::prototypes::input_system;
 CModelInfo* game::memory::interfaces::prototypes::model_info;
+IVModelRender* game::memory::interfaces::prototypes::model_render;
+IMaterialSystem* game::memory::interfaces::prototypes::material_system;
 
 namespace game {
 	namespace memory {
@@ -33,6 +35,9 @@ namespace game {
 
 					game::memory::interfaces::prototypes::interface_exports[pe::Images::IMAGE_VGUI_MAT_SURFACE] =
 						pe::util::memory::exports::getter::the<pe::util::memory::exports::types::create_interface_t>(pe::prototypes::images[pe::Images::IMAGE_VGUI_MAT_SURFACE], "CreateInterface");
+
+					game::memory::interfaces::prototypes::interface_exports[pe::Images::IMAGE_MATERIAL_SYSTEM] =
+						pe::util::memory::exports::getter::the<pe::util::memory::exports::types::create_interface_t>(pe::prototypes::images[pe::Images::IMAGE_MATERIAL_SYSTEM], "CreateInterface");
 
 					game::memory::interfaces::prototypes::interface_exports[pe::Images::IMAGE_VSTDLIB] =
 						pe::util::memory::exports::getter::the<pe::util::memory::exports::types::create_interface_t>(pe::prototypes::images[pe::Images::IMAGE_VSTDLIB], "CreateInterface");
@@ -117,6 +122,22 @@ namespace game {
 
 					if (game::memory::interfaces::prototypes::model_info == nullptr) {
 						logger::the<logger::level::log>("%s: \"model_info\" was nullptr\n", __FUNCTION__);
+						SINCLAIR_THROW(errors::Errors::GAME_MEMORY_INTERFACE_WAS_NULL);
+						return false;
+					}
+
+					game::memory::interfaces::prototypes::model_render = game::memory::interfaces::getter::the<IVModelRender*, game::memory::interfaces::prototypes::interface_exports, pe::Images::IMAGE_ENGINE>("VEngineModel016");
+
+					if (game::memory::interfaces::prototypes::model_render == nullptr) {
+						logger::the<logger::level::log>("%s: \"model_render\" was nullptr\n", __FUNCTION__);
+						SINCLAIR_THROW(errors::Errors::GAME_MEMORY_INTERFACE_WAS_NULL);
+						return false;
+					}
+
+					game::memory::interfaces::prototypes::material_system = game::memory::interfaces::getter::the<IMaterialSystem*, game::memory::interfaces::prototypes::interface_exports, pe::Images::IMAGE_MATERIAL_SYSTEM>("VMaterialSystem080");
+
+					if (game::memory::interfaces::prototypes::material_system == nullptr) {
+						logger::the<logger::level::log>("%s: \"material_system\" was nullptr\n", __FUNCTION__);
 						SINCLAIR_THROW(errors::Errors::GAME_MEMORY_INTERFACE_WAS_NULL);
 						return false;
 					}
