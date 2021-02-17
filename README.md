@@ -52,7 +52,7 @@
   - Preserve
   - Change and Restore
   - Change
-- Unique to others, it also has a get current color method in the wrapper.
+- Unique to others, it also has a get current color (Global to Surface) method in the wrapper.
 
 # Design
 - Sinclair is designed with what'd perform the best in mind, explaining the templates 'abuse'. 
