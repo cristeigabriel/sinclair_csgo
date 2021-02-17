@@ -132,6 +132,12 @@
     <ClInclude Include="cstrike\imaterial.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="cstrike\vgui2\vpanel.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="util\color\color.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp">

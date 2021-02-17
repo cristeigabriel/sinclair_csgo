@@ -5,6 +5,7 @@
 #include "../game/memory/memory.h"
 #include "../math/math.h"
 
+#include "vgui2/vpanel.h"
 #include "vgui/isurface.h"
 #include "cusercmd.h"
 #include "utl_vector.h"

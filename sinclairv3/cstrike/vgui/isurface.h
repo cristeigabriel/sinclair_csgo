@@ -5,6 +5,8 @@
 #include "../../game/memory/memory.h"
 #include "../../math/math.h"
 
+#include "../vgui2/vpanel.h"
+
 struct Vertex_t {
 	Vertex_t() {}
 	Vertex_t(const math::point_t<int>& pos, const math::point_t<int>& coord = math::point_t<int>{ 0, 0 }) {
@@ -78,4 +80,14 @@ public:
 	__forceinline void draw_colored_text(HFont font, int x, int y, int r, int g, int b, int a, const char* text) {
 		return util::vtable::func::getter::the_cdecl<void, indices::DRAW_COLORED_TEXT_INDEX>(this, font, x, y, r, g, b, a, text);
 	}
+
+public:
+	//	thanks IDA
+	char pad_0000[20];
+	float float14; 
+	char pad_0001[20];
+	util::color_t::color_type r; 
+	util::color_t::color_type g;
+	util::color_t::color_type b;
+	util::color_t::color_type a;
 };

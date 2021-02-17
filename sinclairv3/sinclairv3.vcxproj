@@ -178,6 +178,7 @@
     <ClInclude Include="cstrike\modelinfo.h" />
     <ClInclude Include="cstrike\sdk_hud_chat.h" />
     <ClInclude Include="cstrike\utl_vector.h" />
+    <ClInclude Include="cstrike\vgui2\vpanel.h" />
     <ClInclude Include="cstrike\vgui\isurface.h" />
     <ClInclude Include="cstrike\weapons.h" />
     <ClInclude Include="errors\errors.h" />
@@ -199,6 +200,7 @@
     <ClInclude Include="pe\pe.h" />
     <ClInclude Include="pe\util\util.h" />
     <ClInclude Include="logger\logger.h" />
+    <ClInclude Include="util\color\color.h" />
     <ClInclude Include="util\util.h" />
   </ItemGroup>
   <ItemGroup>

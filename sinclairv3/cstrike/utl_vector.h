@@ -3,7 +3,7 @@
 //	Refer to Cstrike leak
 
 template <class T, class m = int>
-class UtlMemory {
+class CUtlMemory {
 public:
 	T& operator[](m _index) { return m_memory[_index]; }
 
@@ -13,8 +13,8 @@ protected:
 	int m_grow_size;
 };
 
-template <class T, class a = UtlMemory<T>>
-class UtlVector {
+template <class T, class a = CUtlMemory<T>>
+class CUtlVector {
 	typedef a allocator;
 
 public:

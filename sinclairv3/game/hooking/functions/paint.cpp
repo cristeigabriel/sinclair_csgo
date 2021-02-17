@@ -11,16 +11,11 @@ void __fastcall game::hooking::functions::prototypes::paint::hooked(REGISTERS, P
 
 	if (*(DWORD*)(v3 + 72) /* staticTransitionPanel */ && (mode & PaintMode::PAINT_UI_PANELS) != 0) {
 		o_start_drawing(game::memory::interfaces::prototypes::surface);
-		
-		game::renderer::surface::text<game::renderer::surface::Fonts::FONT_VERDANA_BOLD>
-			("helo", 10, 10, 10, 255, 255, 255);
 
-		game::renderer::surface::set_color(255, 255, 255, 255);
-		game::renderer::surface::rectangle<false>(50, 50, 20, 20);
-
-		//	According to the renderer design, this is obviously going to globally change color
-		//	Though, I'll consider implementing a preservation feature
-		game::renderer::surface::rectangle(50, 100, 20, 20, 255, 0, 255);
+		game::renderer::surface::set_color({ 155, 0, 0, 255 });
+		game::renderer::surface::rectangle<game::renderer::surface::ColorPreservation::COLOR_PRESERVE>(15, 15, 100, 100);
+		game::renderer::surface::rectangle<game::renderer::surface::ColorPreservation::COLOR_CHANGE_AND_RESTORE>(15, 315, 100, 100, { 255, 0, 255, 255 });
+		game::renderer::surface::rectangle<game::renderer::surface::ColorPreservation::COLOR_PRESERVE>(15, 615, 100, 100);
 
 		o_finish_drawing(game::memory::interfaces::prototypes::surface);
 	}

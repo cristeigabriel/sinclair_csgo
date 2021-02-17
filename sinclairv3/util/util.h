@@ -3,7 +3,7 @@
 #include "../pe/pe.h"
 #include "../pe/util/util.h"
 
-#include <cstdint>
+#include "color/color.h"
 
 namespace util {
     namespace vtable {

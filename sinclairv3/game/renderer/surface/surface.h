@@ -6,9 +6,19 @@
 
 #include "../../memory/memory.h"
 
+#include <WinUser.h>
+
+#define PLAT(vpanel) (((VPanel *)vpanel)->plat)
+
 namespace game {
 	namespace renderer {
 		namespace surface {
+			enum ColorPreservation {
+				COLOR_CHANGE,
+				COLOR_CHANGE_AND_RESTORE,
+				COLOR_PRESERVE
+			};
+
 			enum Fonts {
 				FONT_VERDANA_BOLD,
 
@@ -23,8 +33,15 @@ namespace game {
 				extern HFont fonts[game::renderer::surface::Fonts::FONT_LIST_SIZE];
 			}
 
-			inline void set_color(int r, int g, int b, int a) {
-				game::memory::interfaces::prototypes::surface->draw_set_color(r, g, b, a);
+			inline const util::color_t& get_color() {
+				return { game::memory::interfaces::prototypes::surface->r,
+					game::memory::interfaces::prototypes::surface->g,
+					game::memory::interfaces::prototypes::surface->b,
+					game::memory::interfaces::prototypes::surface->a };
+			}
+
+			inline void set_color(const util::color_t& color) {
+				game::memory::interfaces::prototypes::surface->draw_set_color(color.r, color.g, color.b, color.a);
 			}
 
 			//	We're not going to manage text color ourselves, only for geometry
@@ -35,36 +52,60 @@ namespace game {
 
 			template <game::renderer::surface::Fonts font,
 				HFont(&fonts_list)[game::renderer::surface::Fonts::FONT_LIST_SIZE] = game::renderer::surface::prototypes::fonts, size_t N>
-			inline void text(const char(&text)[N], int x, int y, int r, int g, int b, int a) {
-				game::memory::interfaces::prototypes::surface->draw_colored_text(fonts_list[font], x, y, r, g, b, a, text);
+				inline void text(const char(&text)[N], int x, int y, const util::color_t& color) {
+				game::memory::interfaces::prototypes::surface->draw_colored_text(fonts_list[font], x, y, color.r, color.g, color.b, color.a, text);
 			}
 
 			//	According to godbolt, there'll never be a cmp, this is processed by compile time
-			//	If change color is true, there's a function that sets color normally and does others
-			//	Else, it just does others normally
 
-			template <bool change_color = true>
-			inline void rectangle(int x, int y, int w, int h, int r = 255, int g = 255, int b = 255, int a = 255) {
-				if (change_color)
-					game::memory::interfaces::prototypes::surface->draw_set_color(r, g, b, a);
+			//	Uninitialized but created values will be compiled away
+
+			template <game::renderer::surface::ColorPreservation change_color = game::renderer::surface::ColorPreservation::COLOR_CHANGE>
+			inline void rectangle(int x, int y, int w, int h, const util::color_t& color = { 255, 255, 255, 255 }) {
+				static util::color_t old_color;
+
+				if (change_color == ColorPreservation::COLOR_CHANGE_AND_RESTORE)
+					old_color = get_color();
+
+				if (change_color == ColorPreservation::COLOR_CHANGE || change_color == ColorPreservation::COLOR_CHANGE_AND_RESTORE)
+					game::renderer::surface::set_color(color);
 
 				game::memory::interfaces::prototypes::surface->draw_filled_rectangle(x, y, x + w, y + h);
+
+				if (change_color == ColorPreservation::COLOR_CHANGE_AND_RESTORE)
+					game::renderer::surface::set_color(old_color);
 			}
 
-			template <bool change_color = true>
-			inline void rectangle_outline(int x, int y, int w, int h, int r = 255, int g = 255, int b = 255, int a = 255) {
-				if (change_color)
-					game::memory::interfaces::prototypes::surface->draw_set_color(r, g, b, a);
+			template <game::renderer::surface::ColorPreservation change_color = game::renderer::surface::ColorPreservation::COLOR_CHANGE>
+			inline void rectangle_outline(int x, int y, int w, int h, const util::color_t& color = { 255, 255, 255, 255 }) {
+				static util::color_t old_color;
+
+				if (change_color == ColorPreservation::COLOR_CHANGE_AND_RESTORE)
+					old_color = get_color();
+
+				if (change_color == ColorPreservation::COLOR_CHANGE || change_color == ColorPreservation::COLOR_CHANGE_AND_RESTORE)
+					game::renderer::surface::set_color(color);
 
 				game::memory::interfaces::prototypes::surface->draw_outlined_rectangle(x, y, x + w, y + h);
+
+				if (change_color == ColorPreservation::COLOR_CHANGE_AND_RESTORE)
+					game::renderer::surface::set_color(old_color);
 			}
 
-			template <bool change_color = true>
-			inline void line(int x0, int y0, int x1, int y1, int r = 255, int g = 255, int b = 255, int a = 255) {
-				if (change_color)
-					game::memory::interfaces::prototypes::surface->draw_set_color(r, g, b, a);
+			template <game::renderer::surface::ColorPreservation change_color = game::renderer::surface::ColorPreservation::COLOR_CHANGE>
+			inline void line(int x0, int y0, int x1, int y1, const util::color_t& color = { 255, 255, 255, 255 }) {
+				static util::color_t old_color;
+
+				if (change_color == ColorPreservation::COLOR_CHANGE_AND_RESTORE)
+					old_color = get_color();
+
+				if (change_color == ColorPreservation::COLOR_CHANGE || change_color == ColorPreservation::COLOR_CHANGE_AND_RESTORE)
+					game::renderer::surface::set_color(color);
 
 				game::memory::interfaces::prototypes::surface->draw_line(x0, y0, x0 + x1, y0 + y1);
+
+				if (change_color == ColorPreservation::COLOR_CHANGE_AND_RESTORE)
+					game::renderer::surface::set_color(old_color);
 			}
 		}
 	}

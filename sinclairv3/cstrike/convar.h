@@ -56,7 +56,7 @@ public:
     float min;
     int has_max;
     float max;
-    UtlVector<convar_callback_t> callback;
+    CUtlVector<convar_callback_t> callback;
 };
 
 class ICVar {

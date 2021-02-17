@@ -4,11 +4,11 @@
 
 #include "enums.h"
 
-typedef uintptr_t CBaseHandle;
-typedef uintptr_t VPanel;
-typedef uintptr_t HCursor;
-typedef uintptr_t HTexture;
-typedef uintptr_t HFont;
+typedef uint32_t CBaseHandle;
+typedef uint32_t HCursor;
+typedef uint32_t HTexture;
+typedef uint32_t HFont;
+typedef uint32_t HPanel;
 
 class bf_read;
 class bf_write;
@@ -54,6 +54,8 @@ class INetMessage;
 class ISurface;
 class IMaterial;
 class IMaterialVar;
+class SurfacePlat;
+class VPanel;
 
 typedef void(__thiscall* start_drawing_t)(void*);
 typedef void(__thiscall* finish_drawing_t)(void*);
