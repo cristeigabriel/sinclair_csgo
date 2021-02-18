@@ -113,7 +113,7 @@ namespace game {
                                 (position.x + 1, position.y + 1, position.z - 2, position.v - 2);
 
                             //  Bounding box
-                            game::renderer::surface::rectangle(position.x, position.y, position.z, position.v);
+                            game::renderer::surface::rectangle_outline(position.x, position.y, position.z, position.v);
                         }
                     }
                 }
