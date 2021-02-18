@@ -96,9 +96,6 @@
     <ClInclude Include="math\matrix\matrix.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="game\entities\player.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="game\entities\entities.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -156,6 +153,9 @@
     <ClInclude Include="game\features\visual\visual.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="game\entities\player\player.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp">
@@ -203,9 +203,6 @@
     <ClCompile Include="game\hooking\functions\is_using_static_prop_debug_modes.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="game\entities\player.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="game\hooking\functions\get_cs_wpn_data.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -234,6 +231,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="game\features\visual\visual.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="game\entities\player\player.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

@@ -93,7 +93,7 @@ namespace game {
                             return;
                         }
 
-                        game::renderer::surface::set_color({ 255, 255, 255, 255 });
+                        game::renderer::surface::set_color({ 0, 0, 0, 255 });
 
                         for (int i = 1; i < 65; ++i) {
                             game::entities::player_t* entity =
@@ -106,8 +106,14 @@ namespace game {
                             if (!game::features::visual::util::compute_2d_bounding_box(entity, position))
                                 continue;
 
+                            //  Bounding box outline
                             game::renderer::surface::rectangle_outline<game::renderer::surface::ColorPreservation::COLOR_PRESERVE>
-                                (position.x, position.y, position.z, position.v);
+                                (position.x - 1, position.y - 1, position.z + 2, position.v + 2);
+                            game::renderer::surface::rectangle_outline<game::renderer::surface::ColorPreservation::COLOR_PRESERVE>
+                                (position.x + 1, position.y + 1, position.z - 2, position.v - 2);
+
+                            //  Bounding box
+                            game::renderer::surface::rectangle(position.x, position.y, position.z, position.v);
                         }
                     }
                 }

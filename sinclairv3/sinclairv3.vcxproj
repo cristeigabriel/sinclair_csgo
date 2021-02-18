@@ -189,7 +189,7 @@
     <ClInclude Include="extern\extern.h" />
     <ClInclude Include="framework.h" />
     <ClInclude Include="game\entities\entities.h" />
-    <ClInclude Include="game\entities\player.h" />
+    <ClInclude Include="game\entities\player\player.h" />
     <ClInclude Include="game\features\features.h" />
     <ClInclude Include="game\features\movement\movement.h" />
     <ClInclude Include="game\features\visual\visual.h" />
@@ -213,7 +213,7 @@
     <ClCompile Include="dllmain.cpp" />
     <ClCompile Include="extern\custom_winapi\custom_winapi.cpp" />
     <ClCompile Include="game\entities\entities.cpp" />
-    <ClCompile Include="game\entities\player.cpp" />
+    <ClCompile Include="game\entities\player\player.cpp" />
     <ClCompile Include="game\features\movement\movement.cpp" />
     <ClCompile Include="game\features\visual\visual.cpp" />
     <ClCompile Include="game\game.cpp" />

@@ -10,7 +10,7 @@ namespace util {
         namespace getter {
             template <typename T, DWORD index, int offset = 0>
             inline static T the(void* base_class) {
-                return (T)((*(uint32_t**)(base_class))[index] + offset);
+                return (T)((*(uintptr_t**)(base_class))[index] + offset);
             }
         }
 
