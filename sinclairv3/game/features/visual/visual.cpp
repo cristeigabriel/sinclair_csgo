@@ -99,7 +99,7 @@ namespace game {
                             game::entities::player_t* entity =
                                 game::memory::interfaces::prototypes::entity_list->get<game::entities::player_t*>(i);
 
-                            if (entity == nullptr || entity != game::entities::prototypes::local || !entity->alive())
+                            if (entity == nullptr || entity == game::entities::prototypes::local || !entity->alive())
                                 continue;
 
                             math::point_4d_t<int> position;
