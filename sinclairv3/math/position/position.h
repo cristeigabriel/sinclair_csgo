@@ -17,6 +17,8 @@ namespace math {
 
 	template <typename T>
 	struct point_t {
+		constexpr point_t(T x = 0, T y = 0) : x(x), y(y) {}
+
 		T x, y;
 
 		inline T length() const {
@@ -50,6 +52,8 @@ namespace math {
 
 	template <typename T>
 	struct point_3d_t {
+		constexpr point_3d_t(T x = 0, T y = 0, T z = 0) : x(x), y(y), z(z) {}
+
 		T x, y, z;
 
 		inline T length() const {
@@ -93,6 +97,8 @@ namespace math {
 
 	template <typename T>
 	struct point_4d_t {
+		constexpr point_4d_t(T x = 0 , T y = 0, T z = 0, T v = 0) : x(x), y(y), z(z), v(v) {}
+
 		T x, y, z, v;
 
 		inline T length() const {

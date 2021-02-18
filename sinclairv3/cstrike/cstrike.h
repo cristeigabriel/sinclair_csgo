@@ -23,3 +23,4 @@
 #include "imaterialvar.h"
 #include "imaterialsystem.h"
 #include "ivmodelrender.h"
+#include "ivdebugoverlay.h"

@@ -176,6 +176,7 @@
     <ClInclude Include="cstrike\imaterialsystem.h" />
     <ClInclude Include="cstrike\imaterialvar.h" />
     <ClInclude Include="cstrike\inetmessage.h" />
+    <ClInclude Include="cstrike\ivdebugoverlay.h" />
     <ClInclude Include="cstrike\ivmodelrender.h" />
     <ClInclude Include="cstrike\modelinfo.h" />
     <ClInclude Include="cstrike\sdk_hud_chat.h" />
@@ -191,6 +192,7 @@
     <ClInclude Include="game\entities\player.h" />
     <ClInclude Include="game\features\features.h" />
     <ClInclude Include="game\features\movement\movement.h" />
+    <ClInclude Include="game\features\visual\visual.h" />
     <ClInclude Include="game\game.h" />
     <ClInclude Include="game\hooking\hooking.h" />
     <ClInclude Include="game\hooking\prototypes.h" />
@@ -213,6 +215,7 @@
     <ClCompile Include="game\entities\entities.cpp" />
     <ClCompile Include="game\entities\player.cpp" />
     <ClCompile Include="game\features\movement\movement.cpp" />
+    <ClCompile Include="game\features\visual\visual.cpp" />
     <ClCompile Include="game\game.cpp" />
     <ClCompile Include="game\hooking\functions\create_move.cpp" />
     <ClCompile Include="game\hooking\functions\draw_crosshair.cpp" />

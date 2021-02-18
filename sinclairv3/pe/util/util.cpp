@@ -56,6 +56,15 @@ namespace pe {
 					return false;
 				}
 
+				//	55 8B EC 83 E4 F8 81 EC ? ? ? ? 53 56 8B F1 57 83 BE ? ? ? ? ? 75 14 8B 46 04 8D 4E 04 FF 50 20
+				pe::util::prototypes::static_addresses[pe::util::StaticAddresses::ADDRESS_GET_ENTITY_BOUNDING_BOX] =
+					pe::util::memory::patterns::getter::the<pe::prototypes::images, pe::Images::IMAGE_CLIENT>({ 0x55, 0x8B, 0xEC, 0x83, 0xE4, 0xF8, 0x81, 0xEC, -1, -1, -1, -1, 0x53, 0x56, 0x8B, 0xF1, 0x57, 0x83, 0xBE, -1, -1, -1, -1, -1, 0x75, 0x14, 0x8B, 0x46, 0x04, 0x8D, 0x4E, 0x04, 0xFF, 0x50, 0x20 });
+
+				if (pe::util::prototypes::static_addresses[pe::util::StaticAddresses::ADDRESS_GET_ENTITY_BOUNDING_BOX] == nullptr) {
+					logger::the<logger::level::error>("%s: \"ADDRESS_GET_ENTITY_BOUNDING_BOX\" was nullptr\n", __FUNCTION__);
+					SINCLAIR_THROW(errors::Errors::PE_UTIL_ADDRESS_WAS_NULL);
+					return false;
+				}
 
 				//  #STR: "Inaccuracy =\t%f\tSpread =\t%f\tSpreadDistance =\t%f\tPlay, "whiteAdditive"
 				//  55 8B EC 83 E4 F0 83 EC 78 56 8B F1 8B 0D ? ? ? ?

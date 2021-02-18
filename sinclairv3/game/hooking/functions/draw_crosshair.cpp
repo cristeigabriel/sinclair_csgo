@@ -13,8 +13,9 @@ void __fastcall game::hooking::functions::prototypes::draw_crosshair::hooked(REG
 	//	the check. That, though, will cause for our crosshair to render while we are scoped, so my
 	//	approach is, don't render the crosshair if you're scoped. This won't cause any issues,
 	//	as you shouldn't ever see your crosshair within scope, or with a scopable weapon eitherway
-	if (game::entities::prototypes::local->scoped())
+	if (game::entities::prototypes::local->scoped()) {
 		return;
+	}
 
 	return o_fn(thisptr, dummy);
 }

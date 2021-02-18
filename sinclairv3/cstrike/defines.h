@@ -57,6 +57,7 @@ class ISurface;
 class IMaterial;
 class IMaterialVar;
 class IVModelRender;
+class CIVDebugOverlay;
 class SurfacePlat;
 class VPanel;
 

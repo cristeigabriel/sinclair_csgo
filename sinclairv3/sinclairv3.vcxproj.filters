@@ -150,6 +150,12 @@
     <ClInclude Include="game\features\movement\movement.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="cstrike\ivdebugoverlay.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="game\features\visual\visual.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp">
@@ -225,6 +231,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="game\features\movement\movement.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="game\features\visual\visual.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

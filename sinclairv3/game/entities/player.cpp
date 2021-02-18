@@ -25,7 +25,7 @@ namespace game {
 		uint8_t player_t::flags() {
 			return *(uint8_t*)((uintptr_t)this + game::props::prototypes::props[HASH_CT("DT_BasePlayer")][HASH_CT("m_fFlags")]);
 		}
-		
+
 		uint8_t player_t::movetype() {
 			return *(uint8_t*)((uintptr_t)this + (game::props::prototypes::props[HASH_CT("DT_BaseEntity")][HASH_CT("m_nRenderMode")] + 1));
 		}
@@ -36,6 +36,12 @@ namespace game {
 
 		math::point_3d_t<float> player_t::origin() {
 			return *(math::point_3d_t<float>*)((uintptr_t)this + game::props::prototypes::props[HASH_CT("DT_BasePlayer")][HASH_CT("m_vecViewOffset[0]")]);
+		}
+
+		bool player_t::compute_hitbox_surrounding_box(math::point_3d_t<float>* mins, math::point_3d_t<float>* maxs) {
+			typedef bool(__thiscall* compute_hitbox_surrounding_box_t)(player_t*, math::point_3d_t<float>*, math::point_3d_t<float>*);
+			static compute_hitbox_surrounding_box_t compute_hitbox_surrounding_box_o = (compute_hitbox_surrounding_box_t)pe::util::prototypes::static_addresses[pe::util::StaticAddresses::ADDRESS_GET_ENTITY_BOUNDING_BOX];
+			return compute_hitbox_surrounding_box_o(this, mins, maxs);
 		}
 	}
 }

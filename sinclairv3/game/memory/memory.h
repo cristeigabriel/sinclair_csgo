@@ -43,6 +43,7 @@ namespace game {
 				extern IVEngineClient* engine_client;
 				extern IClientEntityList* entity_list;
 				extern IEngineTraceClient* engine_trace;
+				extern CIVDebugOverlay* debug_overlay;
 				extern ISurface* surface;
 				extern ICVar* cvar_system;
 				extern IInputSystem* input_system;

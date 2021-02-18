@@ -11,6 +11,7 @@ CGlobalVarsBase* game::memory::interfaces::prototypes::global_vars;
 IVEngineClient* game::memory::interfaces::prototypes::engine_client;
 IClientEntityList* game::memory::interfaces::prototypes::entity_list;
 IEngineTraceClient* game::memory::interfaces::prototypes::engine_trace;
+CIVDebugOverlay* game::memory::interfaces::prototypes::debug_overlay;
 ISurface* game::memory::interfaces::prototypes::surface;
 ICVar* game::memory::interfaces::prototypes::cvar_system;
 IInputSystem* game::memory::interfaces::prototypes::input_system;
@@ -90,6 +91,14 @@ namespace game {
 
 					if (game::memory::interfaces::prototypes::engine_trace == nullptr) {
 						logger::the<logger::level::error>("%s: \"engine_trace\" was nullptr\n", __FUNCTION__);
+						SINCLAIR_THROW(errors::Errors::GAME_MEMORY_INTERFACE_WAS_NULL);
+						return false;
+					}
+
+					game::memory::interfaces::prototypes::debug_overlay = game::memory::interfaces::getter::the<CIVDebugOverlay*, game::memory::interfaces::prototypes::interface_exports, pe::Images::IMAGE_ENGINE>("VDebugOverlay004");
+
+					if (game::memory::interfaces::prototypes::debug_overlay == nullptr) {
+						logger::the<logger::level::error>("%s: \"debug_overlay\" was nullptr\n", __FUNCTION__);
 						SINCLAIR_THROW(errors::Errors::GAME_MEMORY_INTERFACE_WAS_NULL);
 						return false;
 					}
