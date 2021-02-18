@@ -7,8 +7,6 @@
 
 #include "../vgui2/vpanel.h"
 
-#include <stdlib.h>
-
 struct Vertex_t {
 	Vertex_t() {}
 	Vertex_t(const math::point_t<int>& pos, const math::point_t<int>& coord = math::point_t<int>{ 0, 0 }) {
