@@ -20,6 +20,7 @@
   - IVEngineClient
   - IClientEntityList
   - IEngineTraceClient
+  - IVDebugOverlay
   - ISurface
   - ICVar
   - IInputSystem
@@ -69,3 +70,4 @@
   - Nightmode (with static prop/skybox modulation)
   - net_graph watermark
   - FileCRCCheck netmessage protobuf bypass
+  - Game bounding box calculated box ESP
