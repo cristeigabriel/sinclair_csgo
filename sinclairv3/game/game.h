@@ -5,6 +5,7 @@
 #include "entities/entities.h"
 #include "hooking/hooking.h"
 #include "renderer/surface/surface.h"
+#include "features/features.h"
 
 namespace game {
 	namespace init {

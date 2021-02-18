@@ -14,7 +14,7 @@ void __fastcall game::hooking::functions::prototypes::paint::hooked(REGISTERS, P
 
 		game::renderer::surface::set_color({ 155, 0, 0, 255 });
 		game::renderer::surface::rectangle<game::renderer::surface::ColorPreservation::COLOR_PRESERVE>(15, 15, 100, 100);
-		game::renderer::surface::rectangle<game::renderer::surface::ColorPreservation::COLOR_CHANGE_AND_RESTORE>(15, 315, 100, 100, { 255, 0, 255, 255 });
+		game::renderer::surface::rectangle_outline<game::renderer::surface::ColorPreservation::COLOR_CHANGE_AND_RESTORE>(15, 315, 100, 100, { 255, 0, 255, 255 });
 		game::renderer::surface::rectangle<game::renderer::surface::ColorPreservation::COLOR_PRESERVE>(15, 615, 100, 100);
 
 		o_finish_drawing(game::memory::interfaces::prototypes::surface);

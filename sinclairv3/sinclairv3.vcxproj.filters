@@ -144,6 +144,12 @@
     <ClInclude Include="cstrike\ivmodelrender.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="game\features\features.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="game\features\movement\movement.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp">
@@ -216,6 +222,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="game\renderer\surface\surface.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="game\features\movement\movement.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
