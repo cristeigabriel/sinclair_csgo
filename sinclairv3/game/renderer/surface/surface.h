@@ -20,7 +20,7 @@ namespace game {
 			};
 
 			enum Fonts {
-				FONT_VERDANA_BOLD,
+				FONT_PF_TEMPESTA_SEVEN,
 
 				FONT_LIST_SIZE
 			};

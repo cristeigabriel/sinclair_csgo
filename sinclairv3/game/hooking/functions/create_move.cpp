@@ -13,5 +13,8 @@ bool __stdcall game::hooking::functions::prototypes::create_move::hooked(float s
 
 	game::features::movement::bunny_hop(cmd);
 
+	cmd->view_angles.cstrike_clamp();
+	cmd->view_angles.cstrike_normalize();
+
 	return false;
 }

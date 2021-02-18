@@ -56,6 +56,38 @@ namespace math {
 
 		T x, y, z;
 
+		//	These could've used <algorithm>
+		//	but I don't want to mix this datatype
+		//	with functions that have special handling such as nodiscard,
+		//	noexcept, etc
+
+		inline void cstrike_clamp() {
+			while (x > 89.f)
+				x -= 180.f;
+			while (x < -89.f)
+				x += 180.f;
+
+			while (y > 180.f)
+				y -= 360.f;
+			while (y < -180.f)
+				y += 360.f;
+		}
+
+		inline void cstrike_normalize() {
+
+			if (x > 89.f)
+				x = 89.f;
+			else if (x < -89.0f)
+				x = -89.f;
+
+			if (y > 180.f)
+				y = 180.f;
+			else if (y < -180.0f)
+				y = -180.f;
+
+			z = 0.f;
+		}
+
 		inline T length() const {
 			return sqrt(x * x + y * y + z * z);
 		}

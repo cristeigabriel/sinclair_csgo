@@ -86,7 +86,7 @@ struct studiohdr_t {
     int					numbones;			//  bones
     int					boneindex;
 
-    inline const mstudiobone_t* pBone(int i) const { assert(i >= 0 && i < numbones); return (mstudiobone_t*)(((uint8_t*)this) + boneindex) + i; };
+    inline mstudiobone_t* pBone(int i) const { assert(i >= 0 && i < numbones); return (mstudiobone_t*)(((uint8_t*)this) + boneindex) + i; };
 
     int					RemapSeqBone(int iSequence, int iLocalBone) const;	//  maps local sequence bone to global bone
     int					RemapAnimBone(int iAnim, int iLocalBone) const;		//  maps local animations bone to global bone

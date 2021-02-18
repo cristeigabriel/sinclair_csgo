@@ -65,6 +65,16 @@ namespace pe {
 					SINCLAIR_THROW(errors::Errors::PE_UTIL_ADDRESS_WAS_NULL);
 					return false;
 				}
+				
+				//	83 79 5C FF 74 07 
+				pe::util::prototypes::static_addresses[pe::util::StaticAddresses::ADDRESS_ENTITY_IS_DORMANT] =
+					pe::util::memory::patterns::getter::the<pe::prototypes::images, pe::Images::IMAGE_CLIENT>({ 0x83, 0x79, 0x5C, 0xFF, 0x74, 0x07 });
+
+				if (pe::util::prototypes::static_addresses[pe::util::StaticAddresses::ADDRESS_ENTITY_IS_DORMANT] == nullptr) {
+					logger::the<logger::level::error>("%s: \"ADDRESS_ENTITY_IS_DORMANT\" was nullptr\n", __FUNCTION__);
+					SINCLAIR_THROW(errors::Errors::PE_UTIL_ADDRESS_WAS_NULL);
+					return false;
+				}
 
 				//  #STR: "Inaccuracy =\t%f\tSpread =\t%f\tSpreadDistance =\t%f\tPlay, "whiteAdditive"
 				//  55 8B EC 83 E4 F0 83 EC 78 56 8B F1 8B 0D ? ? ? ?

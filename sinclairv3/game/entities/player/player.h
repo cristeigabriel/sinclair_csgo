@@ -16,6 +16,7 @@ namespace game {
 			bool scoped();
 			math::point_3d_t<float> origin();
 			bool compute_hitbox_surrounding_box(math::point_3d_t<float>* mins, math::point_3d_t<float>* maxs);
+			bool dormant();
 		};
 	}
 }

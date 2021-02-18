@@ -39,5 +39,11 @@ namespace game {
 			static compute_hitbox_surrounding_box_t compute_hitbox_surrounding_box_o = (compute_hitbox_surrounding_box_t)pe::util::prototypes::static_addresses[pe::util::StaticAddresses::ADDRESS_GET_ENTITY_BOUNDING_BOX];
 			return compute_hitbox_surrounding_box_o(this, mins, maxs);
 		}
+
+		bool player_t::dormant() {
+			typedef bool(__thiscall* is_dormant_t)(player_t*);
+			static is_dormant_t is_dormant_o = (is_dormant_t)pe::util::prototypes::static_addresses[pe::util::StaticAddresses::ADDRESS_ENTITY_IS_DORMANT];
+			return is_dormant_o(this);
+		}
 	}
 }
