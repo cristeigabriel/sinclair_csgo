@@ -103,7 +103,7 @@ namespace game {
                                 continue;
                             }
 
-                            if (!entity->alive() || !entity->dormant()) {
+                            if (!entity->alive() || entity->dormant()) {
                                 continue;
                             }
 
