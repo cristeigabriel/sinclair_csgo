@@ -113,7 +113,7 @@ namespace game {
                                 (position.x + 1, position.y + 1, position.z - 2, position.v - 2);
 
                             //  Bounding box
-                            game::renderer::surface::rectangle_outline<game::renderer::surface::ColorPreservation::COLOR_CHANGE_AND_RESTORE>(position.x, position.y, position.z, position.v, { 0, 0, 0, 255 });
+                            game::renderer::surface::rectangle_outline<game::renderer::surface::ColorPreservation::COLOR_CHANGE_AND_RESTORE>(position.x, position.y, position.z, position.v);
                         }
                     }
                 }
